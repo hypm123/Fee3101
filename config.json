@@ -4,7 +4,7 @@
         "server":"cluster0.nzobcjm.mongodb.net",
         "username":"data2",
         "password":"data2",
-        "dbname":"FEE_TRX"
+        "dbname":"FEE_TRX31"
     },
     "token_tele":{
         "token1":"6794819277:AAGOzv_rVk_Ko_9eimxK1e2aFysXKWfgBMo",
@@ -23,6 +23,8 @@
         "tientam1206":"1700213852"
     },
     "fee":{
+        "fee_gt" : "10",
+
         "adress_fast1": "TV7adQJWEdaYxNmFjjGrE3GRYuiwo99999",
         "fee_fast1": "5",
 

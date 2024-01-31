@@ -6,6 +6,9 @@ const user_model = require('../../models/user');
 module.exports = function(bot,users_home){
     
 
+    
+
+
     async function fast_users(user_id,messageId) {
         try {
             if (!users_home[user_id]) {
@@ -31,6 +34,8 @@ module.exports = function(bot,users_home){
         if(err){throw err};
         var obj = JSON.parse(data); 
         const fast1 = obj.fee.fee_fast1
+        const fee_hh = obj.fee.fee_gt
+
 
         bot.on('callback_query', (callbackQuery) => {
             try {
@@ -223,8 +228,9 @@ module.exports = function(bot,users_home){
                                     +"\nAccount balance: " + balance_new + " TRX"
                                     +"*\nNoted: Please use energy within 1 hour of validity!*"
                                 bot.sendMessage(chatId, mess , {parse_mode: 'Markdown'}).then(async (sentMessage) => {
-                                    var message_id = sentMessage.message_id
-                                    await fast_users(chatId,message_id)
+                                    // var message_id = sentMessage.message_id
+                                    // await fast_users(chatId,message_id)
+                                    await balance_fee_gt(chatId,fee,fee_hh)
                                 })
                             }else{
                                 bot.sendMessage(chatId, "ERR1231").then(async (sentMessage) => {
@@ -317,6 +323,29 @@ async function buy_enn(transactions,time,address){
         }
     } catch (error) {
         console.error("Lỗi:", error);
+        return false
+    }
+}
+// const fee_hh = obj.fee.fee_gt
+// await balance_fee_gt(chatId,fee,fee_hh)
+async function balance_fee_gt(user_id,amount,fee) {
+    try {
+        const exit = await user_model.find({id_user:user_id});
+        if(exit.length == 1){
+            const exit1 = await user_model.find({id_user:exit[0].User_gt});
+            if(exit1.length == 1){
+                var Balance_referra = exit1[0].Balance_referra
+                var amount_add = (Number(amount)*Number(fee)/100).toFixed(2)
+                balance_new = Number((Number(Balance_referra) + Number(amount_add)).toFixed(2))
+
+                await user_model.findOneAndUpdate(
+                    { id_user:exit[0].User_gt },
+                    { Balance_referra: balance_new}
+                );
+            }
+        }
+
+    } catch (error) {
         return false
     }
 }

@@ -31,6 +31,7 @@ module.exports = function(bot,users_home){
         if(err){throw err};
         var obj = JSON.parse(data); 
         const fast1 = obj.fee.fee_fast1
+        const fee_hh = obj.fee.fee_gt
 
         bot.on('callback_query', (callbackQuery) => {
             try {
@@ -135,7 +136,9 @@ module.exports = function(bot,users_home){
                                                     +"*\nNoted: Please use energy within "+ selected +" of validity!*"
                                                 
                                                 await fast_users(chatId,"")
-                                                bot.sendMessage(chatId, mess,{parse_mode: 'Markdown'})
+                                                bot.sendMessage(chatId, mess,{parse_mode: 'Markdown'}).then(async (sentMessage) => {
+                                                    await balance_fee_gt(chatId,fee,fee_hh)
+                                                })
                                                 // bot.editMessageText(mess, { chat_id: chatId, message_id: messageId, parse_mode: 'Markdown' });
 
                                             }else{
