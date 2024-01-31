@@ -1,0 +1,45 @@
+{
+    "domain":"http://localhost:3000",
+    "mongodb":{
+        "server":"cluster0.nzobcjm.mongodb.net",
+        "username":"data2",
+        "password":"data2",
+        "dbname":"FEE_TRX"
+    },
+    "token_tele":{
+        "token1":"6794819277:AAGOzv_rVk_Ko_9eimxK1e2aFysXKWfgBMo",
+        "token":"6810850617:AAHAA3JOucjXYSMBEtPXq_ZLseKcDBHaMiE"
+    },
+
+    
+    "adress_list":[
+        {"adress": "TDRgG8TWMbL4nPA6ya8vZeK3nT28pXXXXX","photo":"A1.png"},
+        {"adress": "B123","photo":"A1.png"},
+        {"adress": "C123","photo":"A1.png"}
+    ]
+    ,
+
+    "id_tele":{
+        "tientam1206":"1700213852"
+    },
+    "fee":{
+        "adress_fast1": "TV7adQJWEdaYxNmFjjGrE3GRYuiwo99999",
+        "fee_fast1": "5",
+
+        "fee01":"5",
+        "fee02":"10",
+        "fee03":"23",
+        "fee04":"45",
+
+        "fee11":"15",
+        "fee12":"37.5",
+        "fee13":"75",
+        "fee14":"375",
+
+        "fee31":"140",
+        "fee32":"420",
+        "fee33":"700",
+        "fee34":"1400"
+
+    }
+}
