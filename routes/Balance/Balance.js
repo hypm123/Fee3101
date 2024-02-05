@@ -66,13 +66,16 @@ module.exports = function(bot,users_home){
         async function balance(chatId,username){
             const exit = await user_model.find({id_user:chatId});
             if(exit.length == 1){
+                var Balance_trx = exit[0].Balance_trx
+                var Balance_usdt = exit[0].Balance_usdt
+                var Balance_referra = exit[0].Balance_referra
                 
                 var mess = "The balance can be used for direct consumption conveniently and quickly:"
                     + "\n➖➖➖➖➖➖➖➖"
                     + "\nUsername: " + username
                     + "\nID: " + chatId
-                    + "\nTRX balance: 0 TRX " 
-                    + "\nUSDT balance: 0 USDT"
+                    + "\nTRX balance: "+Balance_trx" TRX " 
+                    + "\nUSDT balance: "+Balance_usdt+" USDT"
                     + "\nPlease select the recharge amount"
                 var inlineKeyboard = {
                     inline_keyboard: [
