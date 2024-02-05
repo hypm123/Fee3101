@@ -74,7 +74,7 @@ module.exports = function(bot,users_home){
                     + "\n➖➖➖➖➖➖➖➖"
                     + "\nUsername: " + username
                     + "\nID: " + chatId
-                    + "\nTRX balance: "+Balance_trx" TRX " 
+                    + "\nTRX balance: "+Balance_trx+ " TRX " 
                     + "\nUSDT balance: "+Balance_usdt+" USDT"
                     + "\nPlease select the recharge amount"
                 var inlineKeyboard = {
