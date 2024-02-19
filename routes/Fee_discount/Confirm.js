@@ -184,6 +184,28 @@ module.exports = function(bot,users_home){
         
       
     })
+
+    async function balance_fee_gt(user_id,amount,fee) {
+        try {
+            const exit = await user_model.find({id_user:user_id});
+            if(exit.length == 1){
+                const exit1 = await user_model.find({id_user:exit[0].User_gt});
+                if(exit1.length == 1){
+                    var Balance_referra = exit1[0].Balance_referra
+                    var amount_add = (Number(amount)*Number(fee)/100).toFixed(2)
+                    balance_new = Number((Number(Balance_referra) + Number(amount_add)).toFixed(2))
+    
+                    await user_model.findOneAndUpdate(
+                        { id_user:exit[0].User_gt },
+                        { Balance_referra: balance_new}
+                    );
+                }
+            }
+    
+        } catch (error) {
+            return false
+        }
+    }
 }
 
 async function check_adress(address) {
