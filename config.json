@@ -26,12 +26,12 @@
         "fee_gt" : "10",
 
         "adress_fast1": "TV7adQJWEdaYxNmFjjGrE3GRYuiwo99999",
-        "fee_fast1": "5",
+        "fee_fast1": "4.25",
 
-        "fee01":"5",
-        "fee02":"10",
-        "fee03":"23",
-        "fee04":"45",
+        "fee01":"4.25",
+        "fee02":"8.",
+        "fee03":"21.25",
+        "fee04":"42.5",
 
         "fee11":"15",
         "fee12":"37.5",
