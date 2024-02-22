@@ -115,7 +115,7 @@ module.exports = function(bot){
                                         }
                                     };
                                     setTimeout(function() {
-                                        gethistory(address,"");
+                                        gethistory(address,data[0].transactionHash);
                                     }, 5000);
                                 }
                                 delay2();
