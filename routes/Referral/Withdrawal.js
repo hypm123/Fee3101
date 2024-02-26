@@ -48,10 +48,22 @@ module.exports = function(bot,users_home){
         })
 
         async function me(chatId){
-            bot.sendMessage(chatId, "This function is currently under maintenance").then(async (sentMessage) => {
-                var messageId = sentMessage.message_id;
-                await me_users(chatId,messageId)
-            })
+            const exit = await user_model.find({id_user:chatId});
+            if(exit.length == 1){
+                var Balance_referra = exit[0].Balance_referra
+                if (Balance_referra < 100 ){
+                    bot.sendMessage(chatId, "Minimum withdrawal amount is 10 TRX").then(async (sentMessage) => {
+                        var messageId = sentMessage.message_id;
+                        await me_users(chatId,messageId)
+                    })
+                }else{
+                    bot.sendMessage(chatId, "This function is currently under maintenance").then(async (sentMessage) => {
+                        var messageId = sentMessage.message_id;
+                        await me_users(chatId,messageId)
+                    })
+                }
+            }
+            
         }
 
     })
