@@ -71,7 +71,7 @@ module.exports = function(bot,users_home){
                         sl = data.length-1
                     }
                     var mess = ''
-                    for(let i = sl; i>=0;i--){
+                    for(let i = 0; i<=sl;i++){
                         mess = mess
                             + "Order number: " + data[i].orderId
                             + "\nStatus: " + data[i].status
