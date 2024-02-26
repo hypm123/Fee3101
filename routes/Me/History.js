@@ -68,13 +68,13 @@ module.exports = function(bot,users_home){
                 if(data.length>0){
                     sl = data.length-1
                     sll = 0
-                    if(data.length>9){
-                        sll = data.length-9
+                    if(data.length>10){
+                        sll = data.length-10
                     }
                     var mess = ''
                     for(let i = sl; i >= sll;i--){
                         mess = mess
-                            + "Order number: " + data[i].orderId + " __ " + i
+                            + "Order number: " + data[i].orderId
                             + "\nStatus: " + data[i].status
                             + "\nOrder time: " + data[i].timestamp
                             + "\nReceiving address: " + data[i].adress
