@@ -73,7 +73,7 @@ module.exports = function(bot,users_home){
                     var mess = ''
                     for(let i = 0; i<=sl;i++){
                         mess = mess
-                            + "Order number: " + data[i].orderId
+                            + "Order number: " + data[i].orderId + " __ " + i
                             + "\nStatus: " + data[i].status
                             + "\nOrder time: " + data[i].timestamp
                             + "\nReceiving address: " + data[i].adress
