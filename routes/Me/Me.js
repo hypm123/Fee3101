@@ -4,7 +4,7 @@ const user_model = require('../../models/user');
 
 module.exports = function(bot,users_home){
 
-    require("./History")(bot,users_home);
+    // require("./History")(bot,users_home);
 
     async function me_users(user_id,messageId) {
         try {
