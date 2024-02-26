@@ -51,7 +51,7 @@ module.exports = function(bot,users_home){
             const exit = await user_model.find({id_user:chatId});
             if(exit.length == 1){
                 var Balance_referra = exit[0].Balance_referra
-                if (Balance_referra < 100 ){
+                if (Balance_referra < 10 ){
                     bot.sendMessage(chatId, "Minimum withdrawal amount is 10 TRX").then(async (sentMessage) => {
                         var messageId = sentMessage.message_id;
                         await me_users(chatId,messageId)
