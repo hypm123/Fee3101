@@ -66,12 +66,13 @@ module.exports = function(bot,users_home){
                 };
 
                 if(data.length>0){
-                    var sl = 9
-                    if(data.length<9){
-                        sl = data.length-1
+                    sl = data.length-1
+                    sll = 0
+                    if(data.length>9){
+                        sll = data.length-9
                     }
                     var mess = ''
-                    for(let i = 0; i<=sl;i++){
+                    for(let i >= sl; i=sll;i--){
                         mess = mess
                             + "Order number: " + data[i].orderId + " __ " + i
                             + "\nStatus: " + data[i].status
